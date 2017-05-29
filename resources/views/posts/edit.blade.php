@@ -38,6 +38,7 @@
 			  	<!-- value field can be any nonsense, as long as it exists, it works -->
 				<button type="submit" class="btn btn-primary" name="save" value="0">Save Draft</button>
 				<button type="submit" class="btn btn-primary" name="publish" value="1">Publish</button>
+				<a href="{{  url('delete/'.$post->id.'?_token='.csrf_token()) }}" class="btn btn-danger">Delete</a>
 			  </div>
 
 			@include ('layouts.errors')

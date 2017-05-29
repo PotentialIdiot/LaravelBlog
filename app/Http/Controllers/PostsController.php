@@ -107,6 +107,20 @@ class PostsController extends Controller
     	return redirect('/');
     }
 
+    public function destroy(Request $request, $id)
+    {
+    
+        $post = Post::find($id);
+
+        if($post && ($post->user_id == $request->user()->id))
+        {
+            $post->delete();
+        }
+
+        return redirect('/');
+
+    }
+
     // tutorial code pre-refactoring
     /*
     public function store()
